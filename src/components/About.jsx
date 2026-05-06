@@ -15,32 +15,13 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
         >
-          {/* Left Column - Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[300px] sm:h-[400px] lg:h-[550px] w-full rounded-3xl overflow-hidden shadow-2xl group"
-          >
-            <div className="absolute inset-0 bg-blue-500/20 group-hover:bg-transparent transition-colors duration-500 z-20 pointer-events-none mix-blend-overlay"></div>
-            <Image
-              src="/images/about-image.png"
-              alt="Din Islam - MERN Stack Developer"
-              fill
-              className="object-cover relative z-10 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-          </motion.div>
-
-          {/* Right Column - Text */}
+          {/* Right Column (Text) - First on Mobile */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6 text-center lg:text-left"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="order-1 lg:order-2 space-y-6 text-center lg:text-left"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               About Me
@@ -71,6 +52,25 @@ export default function About() {
                 <Download size={18} />
               </motion.a>
             </div>
+          </motion.div>
+
+          {/* Left Column (Image) - Second on Mobile */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="order-2 lg:order-1 relative h-[450px] sm:h-[500px] lg:h-[550px] w-full rounded-3xl overflow-hidden shadow-2xl group border border-white/5 mt-8 lg:mt-0"
+          >
+            <div className="absolute inset-0 bg-blue-500/20 group-hover:bg-transparent transition-colors duration-500 z-20 pointer-events-none mix-blend-overlay"></div>
+            <Image
+              src="/images/about-image.png"
+              alt="Din Islam - MERN Stack Developer"
+              fill
+              className="object-cover relative z-10 grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </motion.div>
         </motion.div>
       </div>

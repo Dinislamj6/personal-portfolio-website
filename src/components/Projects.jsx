@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TbBrandGithub, TbPlayerPlayFilled } from "react-icons/tb";
+import { TbBrandGithub, TbPlayerPlayFilled, TbBrandNextjs, TbBrandTailwind, TbBrandJavascript, TbBrandReact, TbBrandCss3, TbShieldCheck, TbLayout } from "react-icons/tb";
 import Image from "next/image";
 
 const ImageSlider = ({ images }) => {
@@ -39,28 +40,39 @@ const projects = [
     category: "Web Application",
     description: "A comprehensive and interactive online learning platform built with Next.js and Daisy UI. It features a responsive layout crafted with HTML/CSS and utilizes Better Auth for seamless and secure user authentication. Designed to provide an intuitive learning experience.",
     image: [
-      "/images/project1-slide1.png", // Please replace these with your actual downloaded image paths
+      "/images/project1-slide1.png",
       "/images/project1-slide2.png", 
       "/images/project1-slide3.png"
     ],
+    tech: [TbBrandNextjs, TbBrandTailwind, TbBrandJavascript, TbLayout, TbShieldCheck],
     github: "https://github.com/Dinislamj6/b13-A8-repo",
     demo: "https://b13-a8-repo.vercel.app/"
   },
   {
-    title: "Clinic Management Dashboard",
+    title: "Keen Keeper",
     category: "Web Application",
-    description: "Clinic management dashboard built for clarity and efficiency. Prioritizes quick access to patient data, appointment stats, and admin tools via clear layout and visual hierarchy.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-    github: "#",
-    demo: "#"
+    description: "An advanced Relationship Management System (RMS) designed to nurture personal and professional connections. It features intelligent interaction tracking, relationship goal setting, and insightful friendship analytics with a sleek, minimalist dashboard.",
+    image: [
+      "/images/project2-slide1.png",
+      "/images/project2-slide2.png",
+      "/images/project2-slide3.png"
+    ],
+    tech: [TbBrandNextjs, TbBrandTailwind, TbBrandJavascript, TbLayout],
+    github: "https://github.com/Dinislamj6/b13-A7-repo",
+    demo: "https://keen-keeper.vercel.app/"
   },
   {
-    title: "Agri-Food Corporate Website",
+    title: "AppNest",
     category: "Web Application",
-    description: "Corporate website for an Algerian agri-food distributor, focused on trust-building through clear structure, strong visuals, and intuitive navigation.",
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000&auto=format&fit=crop",
-    github: "#",
-    demo: "#"
+    description: "A highly optimized digital marketplace platform that bridges the gap between web users and mobile applications. Built with a focus on visual conversion and seamless navigation, it provides a curated 'Play Store' experience directly in the browser.",
+    image: [
+      "/images/project3-slide1.png",
+      "/images/project3-slide2.png",
+      "/images/project3-slide3.png"
+    ],
+    tech: [TbBrandReact, TbBrandJavascript, TbBrandTailwind, TbBrandCss3, TbLayout],
+    github: "https://github.com/Dinislamj6/apps-play-store",
+    demo: "https://apps-play-store.vercel.app/"
   }
 ];
 
@@ -84,7 +96,7 @@ export default function Projects() {
       });
     }, sectionRef);
     return () => ctx.revert();
-  }, [activeFilter]); // Re-run animation if filter changes
+  }, [activeFilter]);
 
   return (
     <section id="projects" ref={sectionRef} className="py-16 md:py-24 px-4 sm:px-6 bg-[#0B1120] relative">
@@ -97,33 +109,18 @@ export default function Projects() {
           My Projects
         </h2>
 
-        {/* Filters */}
+        {/* Filters - Simplified as requested */}
         <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-16">
           <button 
-            onClick={() => setActiveFilter("Web Application")}
-            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeFilter === "Web Application" 
-              ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-[0_0_20px_rgba(236,72,153,0.4)]" 
-              : "bg-transparent border border-purple-500/30 text-purple-400 hover:border-purple-500/60"
-            }`}
+            className="px-8 py-2.5 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-[0_0_20px_rgba(236,72,153,0.4)]"
           >
-            Web Application
-          </button>
-          <button 
-            onClick={() => setActiveFilter("Mobile application")}
-            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeFilter === "Mobile application" 
-              ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-[0_0_20px_rgba(236,72,153,0.4)]" 
-              : "bg-transparent border border-purple-500/30 text-purple-400 hover:border-purple-500/60"
-            }`}
-          >
-            Mobile application
+            Web Applications
           </button>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-          {projects.filter(p => p.category === activeFilter).map((project, index) => (
+          {projects.map((project, index) => (
             <div 
               key={index} 
               className="project-card flex flex-col bg-[#13111C]/80 backdrop-blur-sm border border-white/10 rounded-3xl p-5 hover:border-purple-500/30 transition-colors duration-500"
@@ -143,13 +140,31 @@ export default function Projects() {
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-8 flex-grow">
+              <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">
                 {project.description}
               </p>
+
+              {/* Tech Stack Icons */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                {project.tech?.map((Icon, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 * i }}
+                    whileHover={{ y: -5, color: '#A855F7' }}
+                    className="text-slate-500 hover:text-purple-400 transition-colors"
+                  >
+                    <Icon size={20} />
+                  </motion.div>
+                ))}
+              </div>
 
               <div className="flex items-center justify-between gap-3 mt-auto">
                 <a 
                   href={project.github} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-full border border-purple-500/50 text-purple-400 hover:bg-purple-500/10 transition-colors text-sm font-medium"
                 >
                   Repository
@@ -157,6 +172,8 @@ export default function Projects() {
                 </a>
                 <a 
                   href={project.demo} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] transition-all text-sm font-medium"
                 >
                   Demo
@@ -165,6 +182,21 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* More Projects Button */}
+        <div className="flex justify-center mt-16 md:mt-24">
+          <motion.a 
+            href="https://github.com/Dinislamj6?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-10 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 group shadow-2xl"
+          >
+            <span>More Projects</span>
+            <TbBrandGithub size={22} className="group-hover:rotate-12 transition-transform" />
+          </motion.a>
         </div>
       </div>
     </section>

@@ -94,7 +94,9 @@ export default function Header() {
               </button>
             </div>
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8 text-2xl font-bold">
-              {navLinks.map((link, i) => (
+              {navLinks
+                .filter(link => ['About', 'Skills', 'Projects'].includes(link.name))
+                .map((link, i) => (
                 <motion.a 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -107,15 +109,6 @@ export default function Header() {
                   {link.name}
                 </motion.a>
               ))}
-              <motion.a 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
-                href="#" 
-                className="px-10 py-4 rounded-full bg-gradient-primary text-white text-lg font-bold shadow-lg shadow-blue-500/20"
-              >
-                Resume
-              </motion.a>
             </nav>
           </motion.div>
         )}
