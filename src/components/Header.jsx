@@ -30,7 +30,7 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
-        scrolled ? 'bg-brand-dark/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+        scrolled ? 'py-3 md:py-4' : 'py-4 md:py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">

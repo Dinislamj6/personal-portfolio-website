@@ -69,11 +69,11 @@ export default function Hero() {
   return (
     <main
       ref={containerRef}
-      className="relative pt-28 pb-20 px-4 sm:px-6 overflow-hidden min-h-screen flex items-center bg-brand-dark"
+      className="relative pt-24 md:pt-32 pb-20 px-4 sm:px-6 overflow-hidden min-h-screen flex items-center bg-[#0B1120]"
     >
       {/* Background glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/10 rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/20 rounded-full blur-[120px]"></div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
 
@@ -138,7 +138,7 @@ export default function Hero() {
           className="relative flex justify-center items-center mt-6 lg:mt-0"
         >
           {/* Circle */}
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-slate-800/50 backdrop-blur-sm border border-white/10">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-slate-800/50 backdrop-blur-sm border border-white/10">
             {/* Profile image */}
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 relative z-10 border-4 border-blue-500/20">
               <Image
