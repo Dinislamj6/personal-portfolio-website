@@ -86,9 +86,9 @@ export default function Projects() {
       gsap.from(".project-card", {
         y: 80,
         opacity: 0,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power3.out",
+        stagger: 0.15,
+        duration: 0.6,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",

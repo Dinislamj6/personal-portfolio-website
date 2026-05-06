@@ -30,7 +30,7 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
-        scrolled ? 'py-3 md:py-4' : 'py-4 md:py-6'
+        scrolled ? 'bg-slate-950/60 backdrop-blur-xl border-b border-white/5 py-3 md:py-4' : 'bg-transparent py-4 md:py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -55,7 +55,6 @@ export default function Header() {
               href={link.href}
             >
               {link.name}
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 origin-right transition-transform duration-300 ${activeLink === link.name ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100 group-hover:origin-left'}`}></span>
             </a>
           ))}
         </nav>
@@ -84,15 +83,6 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="lg:hidden fixed inset-0 z-[99] bg-[#0f172a]/98 backdrop-blur-2xl flex flex-col"
           >
-            {/* Close button inside menu */}
-            <div className="flex justify-end p-6">
-              <button 
-                onClick={() => setIsMenuOpen(false)}
-                className="p-2 text-white hover:bg-white/10 rounded-xl transition-colors"
-              >
-                <X size={28} />
-              </button>
-            </div>
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8 text-2xl font-bold">
               {navLinks
                 .filter(link => ['About', 'Skills', 'Projects'].includes(link.name))

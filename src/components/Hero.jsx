@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 export default function Hero() {
   const [text, setText] = useState('');
@@ -45,7 +46,7 @@ export default function Hero() {
         { y: 0 },
         {
           y: -18,
-          duration: 2,
+          duration: 1.5,
           repeat: -1,
           yoyo: true,
           ease: "power1.inOut",
@@ -81,14 +82,14 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-6 text-center lg:text-left"
         >
           <div className="space-y-3">
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
             >
               Hi, I&apos;m <br />
@@ -101,18 +102,42 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
               className="text-slate-400 text-base lg:text-lg max-w-lg leading-relaxed pt-1 mx-auto lg:mx-0"
             >
               I build scalable full-stack applications using React, Next.js, Express, and MongoDB.
               I focus on clean code, high performance, and creating fast, user-friendly interfaces.
             </motion.p>
+
+            {/* Social Icons moved from Footer */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex gap-4 justify-center lg:justify-start pt-4"
+            >
+              {[
+                { icon: FaInstagram, href: 'https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=qn18od0' },
+                { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/dinislamdev' },
+                { icon: FaGithub, href: 'https://github.com/Dinislamj6' }
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </motion.div>
           </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-wrap gap-3 pt-2 justify-center lg:justify-start"
           >
             <button
