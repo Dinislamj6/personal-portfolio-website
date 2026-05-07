@@ -33,6 +33,7 @@ export default function SmoothScroll({ children }) {
         duration: 1.0,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
+        smoothTouch: true, // Enable smooth scroll on mobile/touch
         wheelMultiplier: 1,
         touchMultiplier: 2,
         lerp: 0.1,
