@@ -73,7 +73,7 @@ function QualificationCard({ q, index }) {
     >
       <div 
         style={{ transform: "translateZ(75px)" }}
-        className="h-full bg-slate-900/40 backdrop-blur-2xl rounded-[2.5rem] p-10 border border-white/10 group-hover:border-blue-500/50 transition-colors duration-500 flex flex-col items-start shadow-2xl relative overflow-hidden"
+        className="h-full bg-slate-900/90 rounded-[2.5rem] p-10 border border-white/10 group-hover:border-blue-500/50 transition-colors duration-500 flex flex-col items-start shadow-2xl relative overflow-hidden"
       >
         {/* Animated Glow Effect */}
         <div 

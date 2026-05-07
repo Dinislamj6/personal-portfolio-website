@@ -30,7 +30,7 @@ export default function SmoothScroll({ children }) {
       root 
       ref={lenisRef}
       options={{
-        duration: 1.2,
+        duration: 1.0,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
         wheelMultiplier: 1,

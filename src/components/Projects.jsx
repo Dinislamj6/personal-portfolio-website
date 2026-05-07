@@ -125,7 +125,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="project-card flex flex-col bg-[#13111C]/80 backdrop-blur-sm border border-white/10 rounded-3xl p-5 hover:border-purple-500/30 transition-colors duration-500"
+              className="project-card flex flex-col bg-[#13111C] border border-white/10 rounded-3xl p-5 hover:border-purple-500/30 transition-colors duration-500"
             >
               <div className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden mb-6 border border-white/5">
                 {Array.isArray(project.image) ? (

@@ -77,7 +77,7 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[#0F172A]/50 backdrop-blur-sm rounded-xl p-[1px] group relative overflow-hidden"
+                className="bg-[#0F172A] rounded-xl p-[1px] group relative overflow-hidden"
               >
                 {/* Subtle gradient border effect using a pseudo-element behind the card content */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-pink-500/20 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>

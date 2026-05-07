@@ -73,8 +73,8 @@ export default function Hero() {
       className="relative pt-24 md:pt-32 pb-20 px-4 sm:px-6 overflow-hidden min-h-screen flex items-center bg-[#0B1120]"
     >
       {/* Background glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/20 rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[80px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/20 rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
 
@@ -83,7 +83,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-6 text-center lg:text-left"
+          className="space-y-6 text-center lg:text-left relative z-30"
         >
           <div className="space-y-3">
             <motion.h2
@@ -142,7 +142,7 @@ export default function Hero() {
           >
             <button
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-7 py-3 rounded-full bg-gradient-primary font-bold text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:scale-105 active:scale-95 transition-all text-sm"
+              className="relative z-50 px-7 py-3 rounded-full bg-gradient-primary font-bold text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:scale-105 active:scale-95 transition-all text-sm"
             >
               View Projects
             </button>
@@ -150,7 +150,7 @@ export default function Hero() {
               href="/Din_Islam_Final_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3 rounded-full border-2 border-blue-500/50 font-bold text-white hover:bg-blue-500/10 hover:scale-105 active:scale-95 transition-all text-sm flex items-center justify-center"
+              className="relative z-50 px-7 py-3 rounded-full border-2 border-blue-500/50 font-bold text-white hover:bg-blue-500/10 hover:scale-105 active:scale-95 transition-all text-sm flex items-center justify-center cursor-pointer"
             >
               View Resume
             </a>
@@ -165,7 +165,7 @@ export default function Hero() {
           className="relative flex justify-center items-center mt-6 lg:mt-0"
         >
           {/* Circle */}
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-slate-800/50 backdrop-blur-sm border border-white/10">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-slate-800 border border-white/10">
             {/* Profile image */}
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 relative z-10 border-4 border-blue-500/20">
               <Image
@@ -186,7 +186,7 @@ export default function Hero() {
             {techIcons.map((icon, index) => (
               <div
                 key={index}
-                className={`floating-icon absolute ${icon.pos} bg-slate-900/90 backdrop-blur-md p-1.5 sm:p-2 md:p-3 rounded-xl border border-white/10 tech-icon-glow shadow-2xl z-20`}
+                className={`floating-icon absolute ${icon.pos} bg-slate-900/95 p-1.5 sm:p-2 md:p-3 rounded-xl border border-white/10 tech-icon-glow shadow-2xl z-20`}
               >
                 <Image
                   alt={icon.alt}
