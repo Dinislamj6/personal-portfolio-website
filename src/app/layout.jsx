@@ -23,7 +23,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dinislam.dev", // Replace with actual domain if known
+    url: "https://dinislam-portfolio.vercel.app/",
     title: "Din Islam | MERN Stack Developer",
     description: "Professional portfolio of Din Islam, a MERN Stack Developer specializing in high-performance web applications.",
     siteName: "Din Islam Portfolio",
@@ -43,14 +43,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Din Islam",
-  "url": "https://dinislam.dev",
+  "url": "https://dinislam-portfolio.vercel.app/",
   "jobTitle": "MERN Stack Developer",
   "alumniOf": "Noakhali University",
   "knowsAbout": ["React", "Next.js", "Node.js", "MongoDB", "Full Stack Development"],
   "sameAs": [
     "https://github.com/Dinislamj6",
     "https://www.linkedin.com/in/dinislamdev",
-    "https://instagram.com/dinislamdev"
+    "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=qn18od0"
   ]
 };
 

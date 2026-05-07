@@ -60,7 +60,12 @@ export default function Header() {
         </nav>
         
         <div className="flex items-center space-x-4">
-          <a href="#" className="hidden md:flex px-6 py-2.5 rounded-full bg-gradient-primary text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-blue-500/20 uppercase tracking-widest">
+          <a 
+            href="/Din_Islam_Final_Resume.pdf" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex px-6 py-2.5 rounded-full bg-gradient-primary text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-blue-500/20 uppercase tracking-widest"
+          >
             Resume
           </a>
 
@@ -84,8 +89,8 @@ export default function Header() {
             className="lg:hidden fixed inset-0 z-[99] bg-[#0f172a]/98 backdrop-blur-2xl flex flex-col"
           >
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8 text-2xl font-bold">
-              {navLinks
-                .filter(link => ['About', 'Skills', 'Projects'].includes(link.name))
+              {[...navLinks, { name: 'Resume', href: '/resume' }]
+                .filter(link => ['About', 'Skills', 'Projects', 'Resume'].includes(link.name))
                 .map((link, i) => (
                 <motion.a 
                   initial={{ opacity: 0, y: 20 }}
@@ -94,7 +99,9 @@ export default function Header() {
                   key={link.name} 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:text-blue-400 transition-colors" 
-                  href={link.href}
+                  href={link.name === 'Resume' ? '/Din_Islam_Final_Resume.pdf' : link.href}
+                  target={link.name === 'Resume' ? '_blank' : undefined}
+                  rel={link.name === 'Resume' ? 'noopener noreferrer' : undefined}
                 >
                   {link.name}
                 </motion.a>

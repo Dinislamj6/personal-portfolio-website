@@ -12,8 +12,10 @@ import {
   TbPalette,
   TbComponents,
   TbShieldLock,
-  TbBrandGithub
+  TbBrandGithub,
+  TbBrandNodejs
 } from "react-icons/tb";
+import { SiExpress } from "react-icons/si";
 
 const stacks = [
   { name: "HTML", icon: TbBrandHtml5 },
@@ -21,6 +23,8 @@ const stacks = [
   { name: "JavaScript", icon: TbBrandJavascript },
   { name: "React", icon: TbBrandReact },
   { name: "Next.js", icon: TbBrandNextjs },
+  { name: "Node.js", icon: TbBrandNodejs },
+  { name: "Express.js", icon: SiExpress },
   { name: "MongoDB", icon: TbBrandMongodb },
   { name: "Tailwind CSS", icon: TbBrandTailwind },
   { name: "Daisy UI", icon: TbPalette },
@@ -31,14 +35,14 @@ const stacks = [
 
 export default function TechStack() {
   return (
-    <section className="pt-16 md:pt-24 pb-8 md:pb-12 px-0 bg-[#0B1120] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-8 text-center">
+    <section className="pt-16 md:pt-24 pb-8 md:pb-12 px-0 bg-[#0B1120] relative overflow-hidden w-full">
+      <div className="w-full">
+        <div className="mb-8 text-center px-4">
           <h4 className="text-slate-400 text-sm font-bold tracking-[0.2em] uppercase mb-2">
             My Tech Stack
           </h4>
         </div>
-        <div className="relative w-full max-w-6xl mx-auto flex items-center">
+        <div className="relative w-full flex items-center">
           {/* Gradient Edges to make it look smooth */}
           <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#0B1120] to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#0B1120] to-transparent z-10 pointer-events-none"></div>
@@ -46,7 +50,7 @@ export default function TechStack() {
           {/* Marquee Container */}
           <motion.div 
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
             className="flex gap-4 md:gap-6 w-max"
           >
             {[...stacks, ...stacks, ...stacks].map((stack, index) => {

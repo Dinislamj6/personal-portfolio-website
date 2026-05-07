@@ -21,13 +21,15 @@ const ImageSlider = ({ images }) => {
   return (
     <div className="relative w-full h-full rounded-2xl overflow-hidden group">
       {images.map((img, idx) => (
-        <img
+        <Image
           key={idx}
           src={img}
           alt={`Slide ${idx}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${
+          fill
+          className={`absolute inset-0 object-cover transition-all duration-1000 group-hover:scale-105 ${
             idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       ))}
     </div>
@@ -129,10 +131,12 @@ export default function Projects() {
                 {Array.isArray(project.image) ? (
                   <ImageSlider images={project.image} />
                 ) : (
-                  <img 
+                  <Image 
                     src={project.image} 
-                    alt="Project Preview"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    alt={project.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 )}
               </div>

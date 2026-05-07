@@ -43,7 +43,8 @@ export default function About() {
 
             <div className="flex justify-center lg:justify-start">
               <motion.a 
-                href="#"
+                href="/Din_Islam_Final_Resume.pdf"
+                download="Din_Islam_Final_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center space-x-2 px-8 py-3 rounded-full bg-gradient-primary text-white font-medium hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all mt-2"

@@ -147,10 +147,12 @@ export default function Hero() {
               View Projects
             </button>
             <a
-              href="#"
+              href="/Din_Islam_Final_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-7 py-3 rounded-full border-2 border-blue-500/50 font-bold text-white hover:bg-blue-500/10 hover:scale-105 active:scale-95 transition-all text-sm flex items-center justify-center"
             >
-              Resume
+              View Resume
             </a>
           </motion.div>
         </motion.div>
@@ -186,10 +188,12 @@ export default function Hero() {
                 key={index}
                 className={`floating-icon absolute ${icon.pos} bg-slate-900/90 backdrop-blur-md p-1.5 sm:p-2 md:p-3 rounded-xl border border-white/10 tech-icon-glow shadow-2xl z-20`}
               >
-                <img
+                <Image
                   alt={icon.alt}
                   className="w-5 h-5 sm:w-6 sm:h-6 md:w-9 md:h-9"
                   src={icon.src}
+                  width={36}
+                  height={36}
                 />
               </div>
             ))}
